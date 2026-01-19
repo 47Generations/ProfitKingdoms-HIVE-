@@ -179,6 +179,10 @@ function travelToCoords(targetX, targetY) {
 }
 
 
+document.getElementById("goHome").addEventListener("click", () => {
+    window.location.href = "index.html";
+})
+
 const travelBtn = document.getElementById("travel-btn");
 
 if (travelBtn) {
@@ -236,37 +240,51 @@ function addItemToInventory(itemId, qty) {
     } else {
         inventory.push({ id: itemId, qty });
     }
-
     renderInventory();
 }
 
-
 function renderInventory() {
-  const slots = document.querySelectorAll(".inventory-slot");
+    const inventoryDiv = document.getElementById("inventory");
+    inventoryDiv.innerHTML = ""; // clear previous
 
-  // Clear all slots first
-  slots.forEach(slot => {
-    slot.style.backgroundImage = "";
-    slot.querySelector(".item-name").textContent = "";
-    slot.querySelector(".item-qty").textContent = "";
-  });
+    // Always render 100 slots
+    for (let i = 0; i < INVENTORY_SIZE; i++) {
+        const slotDiv = document.createElement("div");
+        slotDiv.classList.add("inventory-slot");
 
-  // Render items into slots
-  inventory.forEach((item, index) => {
-    const itemDef = ITEM_DEFS[item.id];
-    if (!itemDef) return;
+        if (i < inventory.length) {
+            const item = inventory[i];
+            const itemDef = ITEM_DEFS[item.id];
 
-    const slot = slots[index];
-    if (!slot) return;
+            // Icon
+            const img = document.createElement("img");
+            img.src = itemDef.icon;
+            img.alt = itemDef.name;
+            img.classList.add("itemIcon");
 
-    slot.style.backgroundImage = `url(${itemDef.icon})`;
-    slot.style.backgroundSize = "contain";
-    slot.style.backgroundRepeat = "no-repeat";
-    slot.style.backgroundPosition = "center";
+            // Name
+            const nameSpan = document.createElement("span");
+            nameSpan.textContent = itemDef.name;
+            nameSpan.classList.add("itemName");
 
-    slot.querySelector(".item-name").textContent = itemDef.name;
-    slot.querySelector(".item-qty").textContent = item.qty;
-  });
+            // Quantity
+            const qtySpan = document.createElement("span");
+            qtySpan.textContent = item.qty;
+            qtySpan.classList.add("itemQty");
+
+            slotDiv.appendChild(img);
+            slotDiv.appendChild(nameSpan);
+            slotDiv.appendChild(qtySpan);
+        }
+
+        inventoryDiv.appendChild(slotDiv);
+    }
+
+    // Update slot counter
+    const inventoryCount = document.getElementById("inventory-count");
+    if (inventoryCount) {
+        inventoryCount.textContent = `${inventory.length}/${INVENTORY_SIZE}`;
+    }
 }
 
 

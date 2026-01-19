@@ -281,8 +281,8 @@ li a {
 }
 
 .itemIcon {
-  width: 32px;
-  height: 32px;
+  width: 80%;
+  height: 80%;
   image-rendering: pixelated;
 }
 
@@ -292,4 +292,36 @@ li a {
 
 .itemQty {
   color: #daa40f;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.stats-slot {
+    background-color: rgb(99,95,95);
+    border: 1px solid #ddd;
+    display: flex;
+    padding: 10px 12px;
+    gap: 10px;
+    font-size: x-large;
+    border-radius: 4px;
+    margin-bottom: 4px;
+}
+
+.stats-slot span {
+    font-weight: bold;
+    justify-content:space-around;
+    color: #dadd17; /* Level color */
+}
+
+.stats-slot .exp {
+    color: rgb(151, 16, 16);
+    font-weight: normal;
+    justify-content: right;
+    font-size: 0.85em;
+    margin-left: 2px; /* <-- Adds 2px space between Level and EXP */
 }

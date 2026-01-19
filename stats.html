@@ -78,8 +78,8 @@
     <aside id="side-nav">
         <h3>Character</h3>
         <ul>
-            <li id = "StatsButton"><a href = "stats.html">Stats</a></li>
-            <li>Inventory</li>
+            <li><a href = "stats.html">Stats</a></li>
+            <li><a href = "inventory.html">Inventory</a></li>
             <li>Elements</li>
             <li>Skills</li>
             <li>Journal</li>
@@ -91,8 +91,33 @@
 
     <!-- MAIN CONTENT -->
     <main id="content">
-        <h3 id="statsLabel">Stats:</h3> <!-- JS will overwrite this -->
-        <li>Attack: <span id = "attackLevel">1</span></li>
+        <h3>Stats:</h3> <!-- JS will overwrite this -->
+        <br>
+        <div id="stats" class="stats-container">
+            <div class="stats-slot">Attack: <span id="attackLevel">1</span> <span id="attackExp" class="exp">0/125</span></div>
+            <div class="stats-slot">Strength: <span id="strengthLevel">1</span> <span id="strengthExp" class="exp">0/125</span></div>
+            <div class="stats-slot">Defence: <span id="defenceLevel">1</span> <span id="defenceExp" class="exp">0/125</span></div>
+            <div class="stats-slot">Prayer: <span id="prayerLevel">1</span> <span id="prayerExp" class="exp">0/125</span></div>
+            <div class="stats-slot">Magic: <span id="magicLevel">1</span> <span id="magicExp" class="exp">0/125</span></div>
+            <div class="stats-slot">Mining: <span id="miningLevel">1</span> <span id="miningExp" class="exp">0/125</span></div>
+            <div class="stats-slot">Smithing: <span id="smithingLevel">1</span> <span id="smithingExp" class="exp">0/125</span></div>
+            <div class="stats-slot">Woodcutting: <span id="woodcuttingLevel">1</span> <span id="woodcuttingExp" class="exp">0/125</span></div>
+            <div class="stats-slot">Carving: <span id="carvingLevel">1</span> <span id="carvingExp" class="exp">0/125</span></div>
+            <div class="stats-slot">Fletching: <span id="fletchingLevel">1</span> <span id="fletchingExp" class="exp">0/125</span></div>
+            <div class="stats-slot">Crafting: <span id="craftingLevel">1</span> <span id="craftingExp" class="exp">0/125</span></div>
+            <div class="stats-slot">Fishing: <span id="fishingLevel">1</span> <span id="fishingExp" class="exp">0/125</span></div>
+            <div class="stats-slot">Cooking: <span id="cookingLevel">1</span> <span id="cookingExp" class="exp">0/125</span></div>
+            <div class="stats-slot">Endurance: <span id="enduranceLevel">1</span> <span id="enduranceExp" class="exp">0/125</span></div>
+            <div class="stats-slot">Collecting: <span id="collectingLevel">1</span> <span id="collectingExp" class="exp">0/125</span></div>
+            <div class="stats-slot">Bartering: <span id="barteringLevel">1</span> <span id="barteringExp" class="exp">0/125</span></div>
+            <div class="stats-slot">Hunting: <span id="huntingLevel">1</span> <span id="huntingExp" class="exp">0/125</span></div>
+            <div class="stats-slot">Taming: <span id="tamingLevel">1</span> <span id="tamingExp" class="exp">0/125</span></div>
+            <div class="stats-slot">Exploration: <span id="explorationLevel">1</span> <span id="explorationExp" class="exp">0/125</span></div>
+            <div class="stats-slot">Runes Making: <span id="runesMakingLevel">1</span> <span id="runesMakingExp" class="exp">0/125</span></div>
+            <div class="stats-slot">Construction: <span id="constructionLevel">1</span> <span id="constructionExp" class="exp">0/125</span></div>
+        </div>
+
+
     </main>
 
 
