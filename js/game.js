@@ -86,29 +86,28 @@ function updateActions(city) {
 function describeLocation() {
     const regionTitle = document.getElementById("regionName");
     const districtTitle = document.getElementById("districtName");
+    const storyText = document.getElementById("storyText");
+
+    if (!regionTitle || !storyText) return; // Page doesn't support world view
+
     let text = `You are at (${gameState.x}, ${gameState.y}). `;
     const city = getCurrentCity();
-    const district = getCurrentDistrict(); // You’ll define this next
-
+    const district = getCurrentDistrict();
 
     if (city) {
-        regionTitle.textContent = city.name; // h3 shows city name
-        districtTitle.textContent = district ? district.name : "General Area";
-        text += `You are inside ${city.name}. The streets are busy and alive.`;
-    } else if (isAtCave()) {
-        regionTitle.textContent = "Dark Cave"; // h3 shows city name
-        districtTitle.textContent = district ? district.name : ""; 
-        text += "You stand before the mouth of a dark cave.";
+        regionTitle.textContent = city.name;
+        if (districtTitle) {
+            districtTitle.textContent = district ? district.name : "General Area";
+        }
+        text += `You are inside ${city.name}.`;
     } else {
-        regionTitle.textContent = "Wilderness" // h3 shows city name
-        districtTitle.textContent = district ? district.name : "";
+        regionTitle.textContent = "Wilderness";
+        if (districtTitle) districtTitle.textContent = "";
         text += "You are traveling through the wilderness.";
     }
 
-    updateContent(text);
-    updateActions(city);
+    storyText.textContent = text;
 }
-
 function movePlayer(dx, dy) {
     const targetX = gameState.x + dx;
     const targetY = gameState.y + dy;
@@ -180,13 +179,97 @@ function travelToCoords(targetX, targetY) {
 }
 
 
-document.getElementById("travel-btn").addEventListener("click", () => {
-    const x = parseInt(document.getElementById("coordX").value);
-    const y = parseInt(document.getElementById("coordY").value);
-    if (isNaN(x) || isNaN(y)) {
-        alert("Please enter valid coordinates!");
-        return;
-    }
-    travelToCoords(x, y);
-});
+const travelBtn = document.getElementById("travel-btn");
 
+if (travelBtn) {
+    travelBtn.addEventListener("click", () => {
+        const x = parseInt(document.getElementById("coordX").value);
+        const y = parseInt(document.getElementById("coordY").value);
+
+        if (isNaN(x) || isNaN(y)) {
+            alert("Please enter valid coordinates!");
+            return;
+        }
+
+        travelToCoords(x, y);
+    });
+}
+
+
+const inventoryEl = document.getElementById("inventory");
+const inventory = [];
+const INVENTORY_SIZE = 100;
+
+if (inventoryEl) {
+    for (let i = 0; i < INVENTORY_SIZE; i++) {
+        const slot = document.createElement("div");
+        slot.classList.add("inventory-slot");
+
+        slot.innerHTML = `
+            <span class="item-qty"></span>
+            <span class="item-name"></span>
+        `;
+
+        inventoryEl.appendChild(slot);
+    }
+}
+
+
+const ITEM_DEFS = {
+    lumber: {
+        id: "lumber",
+        name: "Lumber",
+        icon: "assets/image/Items/Lumber.png",
+        stackable: true,
+        maxStack: 100
+    }
+};
+
+function addItemToInventory(itemId, qty) {
+    qty = Number(qty);
+    const itemDef = ITEM_DEFS[itemId];
+    if (!itemDef) return;
+
+    let existing = inventory.find(i => i.id === itemId);
+    if (existing) {
+        existing.qty += qty;
+    } else {
+        inventory.push({ id: itemId, qty });
+    }
+
+    renderInventory();
+}
+
+
+function renderInventory() {
+  const slots = document.querySelectorAll(".inventory-slot");
+
+  // Clear all slots first
+  slots.forEach(slot => {
+    slot.style.backgroundImage = "";
+    slot.querySelector(".item-name").textContent = "";
+    slot.querySelector(".item-qty").textContent = "";
+  });
+
+  // Render items into slots
+  inventory.forEach((item, index) => {
+    const itemDef = ITEM_DEFS[item.id];
+    if (!itemDef) return;
+
+    const slot = slots[index];
+    if (!slot) return;
+
+    slot.style.backgroundImage = `url(${itemDef.icon})`;
+    slot.style.backgroundSize = "contain";
+    slot.style.backgroundRepeat = "no-repeat";
+    slot.style.backgroundPosition = "center";
+
+    slot.querySelector(".item-name").textContent = itemDef.name;
+    slot.querySelector(".item-qty").textContent = item.qty;
+  });
+}
+
+
+document.getElementById("wood")?.addEventListener("click", () => {
+    addItemToInventory("lumber", 25);
+});

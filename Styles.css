@@ -51,6 +51,10 @@ header {
     cursor: pointer;
 }
 
+#top-nav-right button {
+    padding: 10px 15px;
+    cursor: pointer;
+}
 /* SIDEBAR */
 #side-nav {
     border-right: none;
@@ -63,12 +67,16 @@ header {
 }
 
 #side-nav li {
+    font-family: 'Macondo', monospace; /* special font */
+
     margin-bottom: 8px;
     cursor: pointer;
     width:100px;
 }
 
 button{
+    font-family: 'Macondo', monospace; /* special font */
+
     background-color: rgb(155, 34, 19);
     padding: 0px;
     
@@ -88,11 +96,14 @@ button:hover{
 
 /* MAIN CONTENT */
 #content {
+    font-family: 'Macondo', monospace; /* special font */
+
     padding: 20px;
 }
 
 /* FOOTER */
 footer {
+
     text-align: center;
     padding: 10px;
     border-top: 1px solid #aaa;
@@ -150,11 +161,25 @@ button:disabled {
 
 /* TopNav flex grow */
 #top-nav {
+    font-family: 'Macondo', monospace; /* special font */
+
     display: flex;
     flex-grow: 1;
     align-items: flex-end;   /* sit near bottom of header (2px above hr) */
     gap: 5px;
     margin-bottom: 2px;      /* exactly 2px above hr */
+}
+
+#top-nav-right{
+    font-family: 'Macondo', monospace; /* special font */
+
+    display: flex;
+    flex-grow: 1;
+    align-items: flex-end;   /* sit near bottom of header (2px above hr) */
+    gap: 5px;
+    margin-bottom: 2px;  
+    margin-right: 0px;
+
 }
 
 /* Stats Panel stacked vertically */
@@ -163,7 +188,7 @@ button:disabled {
     flex-direction: column;
     align-items: flex-start;
     gap: 5px;
-    margin-left: 20px;
+    margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 2px;      /* match TopNav distance from hr */
 }
@@ -171,12 +196,12 @@ button:disabled {
 
 
 .statLabel {
-  font-family: 'Press Start 2P', monospace; /* special font */
+  font-family: 'Macondo', monospace; /* special font */
   font-weight: bold;
 }
 
 .statValue {
-  font-family: 'Press Start 2P', monospace;
+  font-family: 'Macondo', monospace;
   color: #FFD700; /* gold for numbers, optional */
 }
 
@@ -226,3 +251,45 @@ button:disabled {
 .south { grid-column: 2; grid-row: 3; }
 .west  { grid-column: 1; grid-row: 2; }
 .east  { grid-column: 3; grid-row: 2; }
+
+
+
+li a {
+  color: rgb(224, 206, 183); /* Or your default text color */
+  text-decoration: none; /* Removes the underline */
+}
+
+.inventory-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+  gap: 5px;
+}
+
+.inventory-slot {
+  position: relative;
+  background-color: rgb(99,95,95);
+  border: 1px solid #ddd;
+  aspect-ratio: 1 / 1;
+  min-height: 40px;
+}
+.inventoryItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px;
+}
+
+.itemIcon {
+  width: 32px;
+  height: 32px;
+  image-rendering: pixelated;
+}
+
+.itemName {
+  font-weight: bold;
+}
+
+.itemQty {
+  color: #daa40f;
+}

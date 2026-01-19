@@ -1,17 +1,133 @@
 <!DOCTYPE html>
-
 <html>
-	<head>
-		<title>Profit Kingdom</title>
-		<meta charset = "UTF-8"/>
-		<link href = "Styles.css" rel = "stylesheet" type = "text/css"/>
-		<script src = "js/game.js"></script>
-	<head>
-	<body>
-		<h1>Profit Kingdom</h1>
-		<hr>
-		<br><h3>"Welcome to Profit Kingdoms!"</h3>
-		<p>Visit <a href = " WebPages/TestHome.html">TestHome</a> here.</p>
-	</body>
-	<footer>Property of YoungKrypt in affiliation with HIVE</footer>
+<head>
+    <title>Profit Kingdom v.0.005</title>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="Styles.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Macondo&display=swap" rel="stylesheet">
+    <script src="js/game.js" defer></script>
+</head>
+
+<body>
+
+<div id="layout">
+
+    <!-- HEADER -->
+    <header id="mainHeader">
+        <div id="logo">
+            <a href = "index.html"><img src = "assets/image/Logo.png" alt="Logo" /></a>
+        </div>
+
+        <nav id="top-nav">
+            <button id="goHome">Home</button>
+            <div class="dropdown">
+                <button class="dropbtn">Explore</button>
+                <div class="dropdown-content">
+                    <button>City</button>
+                    <button>Wilderness</button>
+                    <button>Mountains</button>
+                    <button>Plains</button>
+                </div>
+            </div>
+            <button id="work">Work</button>
+            <button>Fight</button>
+            <button id="market">Market</button>
+        </nav>
+        <nav id="top-nav-right">
+            <button id="help">Help</button>
+            <button id="wiki">Wiki</button>
+            <button id="account-panel">Account</button>
+        </nav>
+
+        <div id="statsPanel">
+            <div>
+                <span class="statLabel">HEALTH:</span>
+                <span class="statValue">100/100</span>
+            </div>
+            <div>
+                <span class="statLabel">MANA:</span>
+                <span class="statValue">50/50</span>
+            </div>
+            <div>
+                <span class="statLabel">Energy:</span>
+                <span class="statValue">125/125</span>
+            </div>
+            <div>
+                <span class="statLabel">SILVER:</span>
+                <span class="statValue">250</span>
+            </div>
+                <div>
+                <span class="statLabel">Gold:</span>
+                <span class="statValue">50</span>
+            </div>
+            <div>
+                <span class="statLabel">Credits:</span>
+                <span class="statValue">0</span>
+            </div>
+            <br>
+            <div>
+                <span class="statLabel">Timer:</span>
+                <span class="statValue" id="timerValue">0<span> Seconds</span></span>
+            </div>
+        </div>
+
+
+    </header>
+
+    <!-- SIDEBAR -->
+    <aside id="side-nav">
+        <h3>Character</h3>
+        <ul>
+            <li><a href = "stats.html">Stats</a></li>
+            <li><a href = "inventory.html">Inventory</a></li>
+            <li>Elements</li>
+            <li>Skills</li>
+            <li>Journal</li>
+        </ul>
+    </aside>
+
+
+
+    <!-- MAIN CONTENT -->
+    <main id="content">
+        <h3 id="regionName">-- TestHome --</h3> <!-- JS will overwrite this -->
+        <h4 id="districtName">District Name</h4>
+        <p id="storyText">Welcome to Profit Kingdom.</p>
+    </main>
+
+    <div id="travelForm">
+        <h4>Travel to Coordinates</h4>
+        <label for="coordX">X:</label>
+        <input type="number" id="coordX" min="0" max="499" />
+        <label for="coordY">Y:</label>
+        <input type="number" id="coordY" min="0" max="499" />
+        <button id="travel-btn">Travel</button>
+    </div>
+
+
+    <div id="travel-ui">
+        <!-- Center Tile -->
+        <div id="current-tile">
+            <h3>Current Location</h3>
+            <p class="location-name">BrayBald City – Outskirts</p>
+            <p class="location-type">Wilderness</p>
+            <p class="travel-status">Idle</p>
+        </div>
+
+        <!-- Direction Buttons -->
+        <button class="dir-btn north" data-dir="north">▲</button>
+        <button class="dir-btn south" data-dir="south">▼</button>
+        <button class="dir-btn west"  data-dir="west">◀</button>
+        <button class="dir-btn east"  data-dir="east">▶</button>
+
+    </div>
+
+
+</div>
+
+<footer>
+    Property of YoungKrypt in affiliation with HIVE
+</footer>
+
+</body>
 </html>
