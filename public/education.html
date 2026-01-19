@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profit Kingdom v.0.005</title>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="Styles.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Macondo&display=swap" rel="stylesheet">
+    <script src="js/game.js" defer></script>
+</head>
+
+<body>
+
+<div id="layout">
+
+    <!-- HEADER -->
+    <header id="mainHeader">
+        <div id="logo">
+            <a href = "index.html"><img src = "assets/image/Logo.png" alt="Logo" /></a>
+        </div>
+
+        <nav id="top-nav">
+            <button id="goHome">Home</button>
+            <div class="dropdown">
+                <button class="dropbtn">Explore</button>
+                <div class="dropdown-content">
+                    <button>City</button>
+                    <button>Wilderness</button>
+                    <button>Mountains</button>
+                    <button>Plains</button>
+                </div>
+            </div>
+            <button id="work">Work</button>
+            <button>Fight</button>
+            <button id="market">Market</button>
+        </nav>
+        <nav id="top-nav-right">
+            <button id="help">Help</button>
+            <button id="wiki">Wiki</button>
+            <button id="account-panel">Account</button>
+        </nav>
+
+        <div id="statsPanel">
+            <div>
+                <span class="statLabel">HEALTH:</span>
+                <span class="statValue">100/100</span>
+            </div>
+            <div>
+                <span class="statLabel">MANA:</span>
+                <span class="statValue">50/50</span>
+            </div>
+            <div>
+                <span class="statLabel">Energy:</span>
+                <span class="statValue">125/125</span>
+            </div>
+            <div>
+                <span class="statLabel">SILVER:</span>
+                <span class="statValue">250</span>
+            </div>
+                <div>
+                <span class="statLabel">Gold:</span>
+                <span class="statValue">50</span>
+            </div>
+            <div>
+                <span class="statLabel">Credits:</span>
+                <span class="statValue">0</span>
+            </div>
+            <br>
+            <div>
+                <span class="statLabel">Timer:</span>
+                <span class="statValue" id="timerValue">0<span> Seconds</span></span>
+            </div>
+        </div>
+
+
+    </header>
+
+    <!-- SIDEBAR -->
+    <aside id="side-nav">
+        <h3>Character</h3>
+        <ul>
+            <li><a href = "stats.html">Stats</a></li>
+            <li><a href = "inventory.html">Inventory</a></li>
+            <li><a href = "education.html">Education</a></li>
+            <li>Skills</li>
+            <li>Journal</li>
+        </ul>
+    </aside>
+
+
+
+    <!-- MAIN CONTENT -->
+    <main id="content">
+        <h3>Education</h3> <!-- JS will overwrite this -->
+        <p>Enroll in some of the finest Academies and become more intelligent -- with some perks.</p>
+    </main>
+
+
+</div>
+
+<footer>
+    Property of YoungKrypt in affiliation with HIVE
+</footer>
+
+</body>
+</html>

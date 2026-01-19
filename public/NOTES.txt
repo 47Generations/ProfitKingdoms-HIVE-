@@ -1,0 +1,41 @@
+--PROFIT KINGDOM IS SIMILAR TO MPL EXCEPT ON THE BLOCKCHAIN
+--DIFFERENT COMPANIES REQUIRE COMPANY LICENSE NFTs
+
+--ITEMS MADE ARE ALSO NFT'S 
+
+
+
+CREATE TABLE players (
+    wallet_id VARCHAR(255) PRIMARY KEY,
+    health INT DEFAULT 100,
+    mana INT DEFAULT 50,
+    energy INT DEFAULT 100,
+    silver INT DEFAULT 0,
+    gold INT DEFAULT 0,
+    credits INT DEFAULT 0,
+    x INT DEFAULT 0,
+    y INT DEFAULT 0,
+    last_login TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+
+CREATE TABLE skills (
+    wallet_id VARCHAR(255),
+    skill_name VARCHAR(50),
+    level INT DEFAULT 1,
+    exp INT DEFAULT 0,
+    nexp INT DEFAULT 125,
+    PRIMARY KEY (wallet_id, skill_name),
+    FOREIGN KEY (wallet_id) REFERENCES players(wallet_id)
+);
+
+
+
+CREATE TABLE inventory (
+    wallet_id VARCHAR(255),
+    item_id VARCHAR(50),
+    quantity INT DEFAULT 1,
+    PRIMARY KEY (wallet_id, item_id),
+    FOREIGN KEY (wallet_id) REFERENCES players(wallet_id)
+);
