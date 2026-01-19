@@ -1,0 +1,29 @@
+[
+  {
+    "x": 0,
+    "y": 0,
+    "regionName": "BrayBald City",
+    "type": "City",
+    "resources": [],
+    "dangerLevel": 0,
+    "description": "The central city of the kingdom, known for its forges, markets, and guild halls."
+  },
+  {
+    "x": 1,
+    "y": 0,
+    "regionName": "BrayBald Outskirts",
+    "type": "Wilderness",
+    "resources": ["Wood", "Stone"],
+    "dangerLevel": 1,
+    "description": "Sparse trees and worn paths surround the city walls. Travelers often gather resources here."
+  },
+  {
+    "x": 2,
+    "y": 0,
+    "regionName": "Whispering Fields",
+    "type": "Wilderness",
+    "resources": ["Herbs", "Wood"],
+    "dangerLevel": 2,
+    "description": "Tall grass sways in the wind. Sounds carry strangely across the open land."
+  }
+]
