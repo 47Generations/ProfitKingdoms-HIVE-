@@ -353,20 +353,23 @@ li a {
 }
 
 .itemIcon {
-  width: 80%;
-  height: 80%;
+  width: 60%;
+  height: 60%;
   margin-right: 10%;
   margin-left: 10%;
+  margin-top: 10%;
   image-rendering: pixelated;
 }
 
 .itemName {
     margin-left: 20%;
+    margin-bottom: 10%;
     font-weight: bold;
 }
 
 .itemQty {
     margin-left: 5px;
+    margin-bottom: 10%;
     color: #daa40f;
 }
 
@@ -561,31 +564,31 @@ li a {
     align-items: right;
     color: rgb(190, 158, 15);
 }
-
 #canvas-menu {
-    position: absolute;    /* Required to use top/left from JS */
-    display: none;         /* Hidden by default */
-    background-color: #333; 
-    border: 2px solid #ffcc00;
+    position: absolute;
+    background: #222;
+    border: 1px solid #555;
     color: white;
-    padding: 0;
-    z-index: 10000;        /* Ensure it sits on top of everything */
-    min-width: 150px;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+    min-width: 160px;
+    z-index: 9999; /* critical */
+    font-family: 'Macondo', monospace; /* special font */
 }
 
 #canvas-menu.hidden {
     display: none;
 }
 
-/* Style the items inside the menu */
-.menu-item {
-    padding: 10px 15px;
+#canvas-menu .menu-item {
+    padding: 8px 12px;
     cursor: pointer;
-    border-bottom: 1px solid #444;
 }
 
-.menu-item:hover {
-    background-color: #555;
-    color: #ffcc00;
+#canvas-menu .menu-item:hover {
+    background: #444;
+}
+
+
+.map_icon {
+    width: 200%;
+    height: 200%;
 }

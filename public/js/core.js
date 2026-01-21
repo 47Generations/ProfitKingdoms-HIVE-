@@ -281,6 +281,13 @@ const ITEM_DEFS = {
         icon: "assets/image/Items/Stone.png",
         stackable: true,
         maxStack: 100
+    },
+    logs: {
+        id: "logs",
+        name: "Logs",
+        icon: "assets/image/Items/Logs.png",
+        stackable: true,
+        maxStack: 125
     }
 };
 
@@ -300,6 +307,7 @@ function addItemToInventory(itemId, qty) {
 
 function renderInventory() {
   const inventoryDiv = document.getElementById("inventory");
+  if (!inventoryDiv) return; // ⬅️ prevent crash
   inventoryDiv.innerHTML = "";
 
   const itemEntries = Object.entries(inventory.items);
@@ -430,28 +438,36 @@ document.addEventListener("click", () => {
   hideInventoryMenu();
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const inventoryMenu = document.getElementById("inventory-menu");
 
-inventoryMenu.addEventListener("click", (e) => {
-  if (!e.target.classList.contains("menu-item")) return;
+    if (!inventoryMenu) {
+        console.warn("inventory-menu not found on this page");
+        return;
+    }
 
-  const action = e.target.dataset.action;
+    inventoryMenu.addEventListener("click", (e) => {
+        if (!e.target.classList.contains("menu-item")) return;
 
-  if (!contextItemId) return;
+        const action = e.target.dataset.action;
+        if (!contextItemId) return;
 
-  switch (action) {
-    case "use":
-      useItem(contextItemId);
-      break;
-    case "sell":
-      sellItem(contextItemId);
-      break;
-    case "drop":
-      dropItem(contextItemId);
-      break;
-  }
+        switch (action) {
+            case "use":
+                useItem(contextItemId);
+                break;
+            case "sell":
+                sellItem(contextItemId);
+                break;
+            case "drop":
+                dropItem(contextItemId);
+                break;
+        }
 
-  hideInventoryMenu();
+        hideInventoryMenu();
+    });
 });
+
 
 
 //STUB
@@ -467,7 +483,3 @@ function sellItem(itemId) {
 function dropItem(itemId) {
   console.log("Dropping", itemId);
 }
-
-
-
-
