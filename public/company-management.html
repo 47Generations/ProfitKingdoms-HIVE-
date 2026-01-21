@@ -5,7 +5,8 @@
     <meta charset="UTF-8"/>
     <link rel="stylesheet" href="Styles.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Macondo&display=swap" rel="stylesheet">
-    <script src="js/game.js" defer></script>
+    <script src="js/core.js" defer></script>
+    <script src="js/work.js" defer></script>
 </head>
 
 <body>
@@ -105,11 +106,42 @@
 
 
     <!-- MAIN CONTENT -->
-    <main id="content">
-        <h3 id="regionName">-- TestHome --</h3> <!-- JS will overwrite this -->
-        <h4 id="districtName">District Name</h4>
-        <p id="storyText">Welcome to Profit Kingdom.</p>
+    <main id="company-management">
+        <section id="company-selector">
+            <label>Company:</label>
+            <select id="companySelect"></select>
+        </section>
+
+        <section class="panel">
+            <h3 id="companyName"></h3>
+            <p>Level: <span id="companyLevel"></span></p>
+            <p>Funds: <span id="companyFunds"></span> gold</p>
+            <p>Workers: <span id="workerCount"></span></p>
+        </section>
+
+        <section class="panel">
+            <h4>Workforce</h4>
+            <label>Wage:</label>
+            <input type="number" id="wageInput">
+            <button id="setWageBtn">Set Wage</button>
+
+            <ul id="workersList"></ul>
+        </section>
+
+        <section class="panel">
+            <h4>Finance</h4>
+            <input type="number" id="goldAmount">
+            <button id="depositGold">Deposit</button>
+            <button id="withdrawGold">Withdraw</button>
+        </section>
+
+        <section class="panel">
+            <h4>Upgrades</h4>
+            <button id="upgradeWorkers">Increase Max Workers</button>
+        </section>
+
     </main>
+
 
 
 </div>

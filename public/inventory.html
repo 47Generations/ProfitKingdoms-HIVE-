@@ -5,7 +5,7 @@
     <meta charset="UTF-8"/>
     <link rel="stylesheet" href="Styles.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Macondo&display=swap" rel="stylesheet">
-    <script src="js/game.js" defer></script>
+    <script src="js/core.js" defer></script>
 </head>
 
 <body>
@@ -14,8 +14,16 @@
 
     <!-- HEADER -->
     <header id="mainHeader">
-        <div id="logo">
-            <a href = "index.html"><img src = "assets/image/Logo.png" alt="Logo" /></a>
+     
+        <div id = "logo-and-status">
+            <div id="logo">
+                <a href = "index.html"><img src = "assets/image/Logo.png" alt="Logo" /></a>
+            </div>
+            <div id="game-status">
+                <div id="game-year">Year: 1</div>
+                <div id="game-day">Day: Prelaunch</div>
+                <div id="game-time">Time: --:-- GMT</div>
+            </div>
         </div>
 
         <nav id="top-nav">
@@ -29,6 +37,7 @@
                     <button>Plains</button>
                 </div>
             </div>
+            <button id="locations">Locations</button>
             <button id="work">Work</button>
             <button>Fight</button>
             <button id="market">Market</button>
@@ -39,6 +48,7 @@
             <button id="account-panel">Account</button>
         </nav>
 
+   
         <div id="statsPanel">
             <div>
                 <span class="statLabel">HEALTH:</span>
@@ -53,16 +63,21 @@
                 <span class="statValue">125/125</span>
             </div>
             <div>
-                <span class="statLabel">SILVER:</span>
+                <span class="statLabel">Silver:</span>
                 <span class="statValue">250</span>
             </div>
                 <div>
                 <span class="statLabel">Gold:</span>
                 <span class="statValue">50</span>
             </div>
+            <br>
             <div>
                 <span class="statLabel">Credits:</span>
                 <span class="statValue">0</span>
+            </div>
+                        <div>
+                <span class="statLabel">KINGS:</span>
+                <span class="statValue">0.000000</span>
             </div>
             <br>
             <div>
@@ -70,6 +85,7 @@
                 <span class="statValue" id="timerValue">0<span> Seconds</span></span>
             </div>
         </div>
+
 
 
     </header>
@@ -99,8 +115,16 @@
 
     </main>
     <button id="wood">Chop Wood</button>
+    <button id="stone">Mine Stone</button>
 
 </div>
+
+<div id="inventory-menu" class="context-menu hidden">
+  <div class="menu-item" data-action="use">Use</div>
+  <div class="menu-item" data-action="sell">Sell</div>
+  <div class="menu-item" data-action="drop">Drop</div>
+</div>
+
 
 <footer>
     Property of YoungKrypt in affiliation with HIVE

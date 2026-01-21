@@ -5,7 +5,9 @@
     <meta charset="UTF-8"/>
     <link rel="stylesheet" href="Styles.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Macondo&display=swap" rel="stylesheet">
-    <script src="js/game.js" defer></script>
+    <script src="js/core.js" defer></script>
+    <script src="js/index-btn.js" defer></script>
+    
 </head>
 
 <body>
@@ -14,10 +16,17 @@
 
     <!-- HEADER -->
     <header id="mainHeader">
-        <div id="logo">
-            <a href = "index.html"><img src = "assets/image/Logo.png" alt="Logo" /></a>
+        <div id = "logo-and-status">
+            <div id="logo">
+                <a href = "index.html"><img src = "assets/image/Logo.png" alt="Logo" /></a>
+            </div>
+            <div id="game-status">
+                <div id="game-year">Year: 1</div>
+                <div id="game-day">Day: Prelaunch</div>
+                <div id="game-time">Time: --:-- GMT</div>
+            </div>
         </div>
-
+       
         <nav id="top-nav">
             <button id="goHome">Home</button>
             <div class="dropdown">
@@ -29,6 +38,7 @@
                     <button>Plains</button>
                 </div>
             </div>
+            <button id="locations">Locations</button>
             <button id="work">Work</button>
             <button>Fight</button>
             <button id="market">Market</button>
@@ -38,6 +48,8 @@
             <button id="wiki">Wiki</button>
             <button id="account-panel">Account</button>
         </nav>
+
+     
 
         <div id="statsPanel">
             <div>
@@ -53,16 +65,21 @@
                 <span class="statValue">125/125</span>
             </div>
             <div>
-                <span class="statLabel">SILVER:</span>
+                <span class="statLabel">Silver:</span>
                 <span class="statValue">250</span>
             </div>
                 <div>
                 <span class="statLabel">Gold:</span>
                 <span class="statValue">50</span>
             </div>
+            <br>
             <div>
                 <span class="statLabel">Credits:</span>
                 <span class="statValue">0</span>
+            </div>
+                        <div>
+                <span class="statLabel">KINGS:</span>
+                <span class="statValue">0.000000</span>
             </div>
             <br>
             <div>
@@ -103,8 +120,6 @@
         <input type="number" id="coordY" min="0" max="499" />
         <button id="travel-btn">Travel</button>
     </div>
-
-
     <div id="travel-ui">
         <!-- Center Tile -->
         <div id="current-tile">

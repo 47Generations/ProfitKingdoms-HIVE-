@@ -3,10 +3,9 @@ const timerValueEl = document.getElementById("timerValue");
 let contextItemId = null;
 
 
-
+const GAME_YEAR_EL = document.getElementById("game-year");
 const GAME_START_TIMESTAMP = Date.UTC(2026, 0, 18, 12, 0, 0);
-// 0 = January
-const PRELAUNCH = true; // flip to false on launch
+const PRELAUNCH = true;
 
 function updateGameTime() {
   const now = new Date();
@@ -15,17 +14,26 @@ function updateGameTime() {
   const gmtTime = now.toUTCString().split(" ")[4];
   document.getElementById("game-time").textContent = `Time: ${gmtTime} GMT`;
 
-  // Day counter
   if (PRELAUNCH) {
     document.getElementById("game-day").textContent = "Day: Pre-Launch";
+    GAME_YEAR_EL.textContent = "Year: Pre-Launch";
   } else {
-    const daysPassed = Math.floor(
+    const totalDays = Math.floor(
       (now.getTime() - GAME_START_TIMESTAMP) / (1000 * 60 * 60 * 24)
     ) + 1;
 
-    document.getElementById("game-day").textContent = `Day: ${daysPassed}`;
+    const year = Math.floor((totalDays - 1) / 365) + 1;  // Start at Year 1
+    const dayOfYear = ((totalDays - 1) % 365) + 1;
+
+    document.getElementById("game-day").textContent = `Day: ${dayOfYear}`;
+    GAME_YEAR_EL.textContent = `Year: ${year}`;
   }
 }
+
+// Update immediately + every second
+updateGameTime();
+setInterval(updateGameTime, 1000);
+
 
 // Update immediately + every second
 updateGameTime();
@@ -211,30 +219,15 @@ function travelToCoords(targetX, targetY) {
 
 document.getElementById("goHome").addEventListener("click", () => {
     window.location.href = "index.html";
-})
+});
 
 
 
 document.getElementById("work").addEventListener("click", () => {
     window.location.href = "work.html";
-})
+});
 
 
-const travelBtn = document.getElementById("travel-btn");
-
-if (travelBtn) {
-    travelBtn.addEventListener("click", () => {
-        const x = parseInt(document.getElementById("coordX").value);
-        const y = parseInt(document.getElementById("coordY").value);
-
-        if (isNaN(x) || isNaN(y)) {
-            alert("Please enter valid coordinates!");
-            return;
-        }
-
-        travelToCoords(x, y);
-    });
-}
 
 
 const inventoryEl = document.getElementById("inventory");

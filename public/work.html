@@ -5,7 +5,8 @@
     <meta charset="UTF-8"/>
     <link rel="stylesheet" href="Styles.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Macondo&display=swap" rel="stylesheet">
-    <script src="js/game.js" defer></script>
+    <script src="js/core.js" defer></script>
+    <script src="js/work-btn.js" defer></script>
 </head>
 
 <body>
@@ -14,9 +15,17 @@
 
     <!-- HEADER -->
     <header id="mainHeader">
-        <div id="logo">
-            <a href = "index.html"><img src = "assets/image/Logo.png" alt="Logo" /></a>
+      <div id = "logo-and-status">
+            <div id="logo">
+                <a href = "index.html"><img src = "assets/image/Logo.png" alt="Logo" /></a>
+            </div>
+            <div id="game-status">
+                <div id="game-year">Year: 1</div>
+                <div id="game-day">Day: Prelaunch</div>
+                <div id="game-time">Time: --:-- GMT</div>
+            </div>
         </div>
+
 
         <nav id="top-nav">
             <button id="goHome">Home</button>
@@ -29,6 +38,7 @@
                     <button>Plains</button>
                 </div>
             </div>
+            <button id="locations">Locations</button>
             <button id="work">Work</button>
             <button>Fight</button>
             <button id="market">Market</button>
@@ -53,16 +63,21 @@
                 <span class="statValue">125/125</span>
             </div>
             <div>
-                <span class="statLabel">SILVER:</span>
+                <span class="statLabel">Silver:</span>
                 <span class="statValue">250</span>
             </div>
                 <div>
                 <span class="statLabel">Gold:</span>
                 <span class="statValue">50</span>
             </div>
+            <br>
             <div>
                 <span class="statLabel">Credits:</span>
                 <span class="statValue">0</span>
+            </div>
+                        <div>
+                <span class="statLabel">KINGS:</span>
+                <span class="statValue">0.000000</span>
             </div>
             <br>
             <div>
@@ -70,6 +85,7 @@
                 <span class="statValue" id="timerValue">0<span> Seconds</span></span>
             </div>
         </div>
+
 
 
     </header>
@@ -90,10 +106,50 @@
 
     <!-- MAIN CONTENT -->
     <main id="content">
-        <h3>Work</h3> <!-- JS will overwrite this -->
-        <p>Get hired and work for a hourly wage.</p>
-    </main>
+        <div class = "main-headers">
+            <h3>Work</h3> <!-- JS will overwrite this -->
+            <p>Get hired and work for a hourly wage.</p>
 
+            <p>Time Left: <span id = "Work-Timer">00:00:00</span></p>
+        </div>
+        <div id="companies-list">
+
+            <div class="company-card" data-company="milk" data-wage="15" data-duration="6">
+            <img class="company-picture" src="assets/image/Companies/MilkFarm.jpg" alt="Milk Farm">
+            
+            <h4 class="company-name">Milk Farm</h4>
+            
+            <p class="company-wage">
+                Wage: <span class="wage-value">25 Gold</span>
+            </p>
+            
+            <p class="company-duration">Duration: 6 Hours</p>
+
+            <button class="work-milk">Work</button>
+            </div>
+
+            <div class="company-card" data-company="lumber" data-wage="15" data-duration="6">
+            <img class="company-picture" src="assets/image/Companies/LumberYard.jpg" alt="LumberYard">
+            
+            <h4 class="company-name">Lumber Yard</h4>
+            
+            <p class="company-wage">
+                Wage: <span class="wage-value">25 Gold</span>
+            </p>
+            
+            <p class="company-duration">Duration: 6 Hours</p>
+
+            <button class="work-lumber">Work</button>
+            </div>
+
+        </div>
+        <div id = "WorkButtons">
+            <button id = "createCompany-btn">Create Company</button>
+            <button id = "manageCompany-btn">Manage Company</button>
+        </div>
+    
+    </main>
+   
 
 </div>
 

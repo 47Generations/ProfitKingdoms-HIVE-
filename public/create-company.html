@@ -5,7 +5,8 @@
     <meta charset="UTF-8"/>
     <link rel="stylesheet" href="Styles.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Macondo&display=swap" rel="stylesheet">
-    <script src="js/game.js" defer></script>
+    <script src="js/core.js" defer></script>
+    <script src="js/work-btn.js" defer></script>
 </head>
 
 <body>
@@ -106,10 +107,41 @@
 
     <!-- MAIN CONTENT -->
     <main id="content">
-        <h3 id="regionName">-- TestHome --</h3> <!-- JS will overwrite this -->
-        <h4 id="districtName">District Name</h4>
-        <p id="storyText">Welcome to Profit Kingdom.</p>
+        <h3>Create Company</h3>
+
+        <div id="companies-list">
+
+            <div class="company-card" data-company="milk" data-wage="15" data-duration="6">
+            <img class="company-picture" src="assets/image/Companies/MilkFarm.jpg" alt="Milk Farm">
+            
+            <h4 class="company-name">Milk Farm</h4>
+            
+            <p class="company-wage">
+                Wage: <span class="wage-value">2</span>
+            </p>
+            
+            <p class="company-duration">Duration: 6 Hours</p>
+
+            <button class="create-company-btn">Create</button>
+            </div>
+
+            <div class="company-card" data-company="lumber" data-wage="15" data-duration="6">
+            <img class="company-picture" src="assets/image/Companies/LumberYard.jpg" alt="LumberYard">
+            
+            <h4 class="company-name">Lumber Yard</h4>
+            
+            <p class="company-wage">
+                Wage: <span class="wage-value">2</span>
+            </p>
+            
+            <p class="company-duration">Duration: 6 Hours</p>
+
+            <button class="create-company-btn">Create</button>
+            </div>
+
+        </div>
     </main>
+
 
 
 </div>
