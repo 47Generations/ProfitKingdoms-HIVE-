@@ -227,6 +227,9 @@ document.getElementById("work").addEventListener("click", () => {
     window.location.href = "work.html";
 });
 
+document.getElementById("locations").addEventListener("click", () => {
+    window.location.href = "map.html";
+});
 
 
 

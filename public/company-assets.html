@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="Styles.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Macondo&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="assets/image/Favicon.ico">
-    <script src="js/game.js" defer></script>
+    <script src="js/core.js" defer></script>
 </head>
 
 <body>
@@ -107,9 +107,22 @@
 
     <!-- MAIN CONTENT -->
     <main id="content">
-        <h3 id="regionName">-- TestHome --</h3> <!-- JS will overwrite this -->
-        <h4 id="districtName">District Name</h4>
-        <p id="storyText">Welcome to Profit Kingdom.</p>
+        <div class = "main-headers">
+            <h3>Company Assets</h3> <!-- JS will overwrite this -->
+            <p>All of your Companies Assets can be stored, bought and sold here.</p>
+        </div>
+        <div id="assets-list">
+
+            <div class="companyInfo">
+                <h4 class="company-name">Milk Farm</h4>
+                <li>Raw Milk <p>Produced from Cow Farm</p></li>
+                <li>Fertilizer <p>Produce from Cow Farm</p></li>
+                <li>Grains <p>Used by Cow Farm</p></li>
+                <li>Water <p>Used by Cow Farm</p></li>
+            </div>
+
+        </div>
+
     </main>
 
 

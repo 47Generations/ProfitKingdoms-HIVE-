@@ -5,8 +5,11 @@
     <meta charset="UTF-8"/>
     <link rel="stylesheet" href="Styles.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Macondo&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/image/Favicon.ico">
     <script src="js/core.js" defer></script>
     <script src="js/work.js" defer></script>
+    <script src="js/work-management.js" defer></script>
+
 </head>
 
 <body>
@@ -114,9 +117,9 @@
 
         <section class="panel">
             <h3 id="companyName"></h3>
-            <p>Level: <span id="companyLevel"></span></p>
-            <p>Funds: <span id="companyFunds"></span> gold</p>
-            <p>Workers: <span id="workerCount"></span></p>
+            <p>Level: <span id="companyLevel">1</span></p>
+            <p>Funds: <span id="companyFunds">0</span> Gold</p>
+            <p>Workers: <span id="workerCount">0</span></p>
         </section>
 
         <section class="panel">
@@ -133,6 +136,7 @@
             <input type="number" id="goldAmount">
             <button id="depositGold">Deposit</button>
             <button id="withdrawGold">Withdraw</button>
+            <button id="assets-company">Assets</button>
         </section>
 
         <section class="panel">

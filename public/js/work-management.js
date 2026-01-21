@@ -42,3 +42,8 @@ if (company.funds >= upgradeCost) {
   company.funds -= upgradeCost;
   company.maxWorkers++;
 }
+
+document.getElementById("assets-company").addEventListener("click", () => {
+    window.location.href = "company-assets.html";
+});
+

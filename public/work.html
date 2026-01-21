@@ -5,8 +5,9 @@
     <meta charset="UTF-8"/>
     <link rel="stylesheet" href="Styles.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Macondo&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/image/Favicon.ico">
     <script src="js/core.js" defer></script>
-    <script src="js/work-btn.js" defer></script>
+    <script src="js/work.js" defer></script>
 </head>
 
 <body>
@@ -110,7 +111,7 @@
             <h3>Work</h3> <!-- JS will overwrite this -->
             <p>Get hired and work for a hourly wage.</p>
 
-            <p>Time Left: <span id = "Work-Timer">00:00:00</span></p>
+            <p>Time Left: <span id = "Work-Timer">00:00:00</span> Work Finished: <span id = "work-shift">00:00:00</span></p>
         </div>
         <div id="companies-list">
 
@@ -125,7 +126,7 @@
             
             <p class="company-duration">Duration: 6 Hours</p>
 
-            <button class="work-milk">Work</button>
+            <button id = "WorkButton" class = "work-milk">Work</button>
             </div>
 
             <div class="company-card" data-company="lumber" data-wage="15" data-duration="6">
@@ -139,7 +140,7 @@
             
             <p class="company-duration">Duration: 6 Hours</p>
 
-            <button class="work-lumber">Work</button>
+            <button id = "WorkButton" class="work-lumber">Work</button>
             </div>
 
         </div>
