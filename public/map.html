@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="Styles.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Macondo&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="assets/image/Favicon.ico">
-    <script src="js/game.js" defer></script>
-     <script src="js/map.js" defer></script>
+    <script src="js/core.js" defer></script>
+    <script src="js/map.js" defer></script>
 </head>
 
 <body>
@@ -109,17 +109,16 @@
     <!-- MAIN CONTENT -->
     <main id="content">
         <h3>Game Map</h3>
-        <canvas id = "GameMap" width="800px" height="600px">
+        <canvas id = "GameMap" width="800px" height="600px"></canvas>
+        <div id="canvas-menu" class="hidden">
+            <div class="menu-item" data-action="walk">Walk-to</div>
+            <div class="menu-item" data-action="chop">Chop Logs</div>
+            <div class="menu-item" data-action="cancel">Cancel</div>
+        </div>
 
-        </canvas>
     </main>
 
-    <div id="canvas-menu" class="hidden">
-        <div class="menu-item" data-action="walk">Walk-to</div>
-        <div class="menu-item" data-action="chop">Chop Logs</div>
-        <div class="menu-item" data-action="cancel">Cancel</div>
-    </div>
-
+   
 
 
 </div>

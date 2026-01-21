@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 /* ===== Basic test route ===== */
-app.get("/", (req, res) => {
+app.get("/api", (req, res) => {
   res.send("Profit Kingdom API is running 🏰");
 });
 

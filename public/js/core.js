@@ -216,7 +216,6 @@ function travelToCoords(targetX, targetY) {
     }, travelTime);
 }
 
-
 document.getElementById("goHome").addEventListener("click", () => {
     window.location.href = "index.html";
 });
@@ -225,6 +224,10 @@ document.getElementById("goHome").addEventListener("click", () => {
 
 document.getElementById("work").addEventListener("click", () => {
     window.location.href = "work.html";
+});
+
+document.getElementById("explore-btn").addEventListener("click", () => {
+    window.location.href = "osrs-map.html";
 });
 
 document.getElementById("locations").addEventListener("click", () => {
@@ -464,3 +467,7 @@ function sellItem(itemId) {
 function dropItem(itemId) {
   console.log("Dropping", itemId);
 }
+
+
+
+
